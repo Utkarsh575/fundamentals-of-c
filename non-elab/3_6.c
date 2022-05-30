@@ -13,8 +13,7 @@ while(i<=sqrt(n))
 {
 i=i*2;
 }
-if(n/i>=i/2)
-ans=n-n/i;
+if(n/i>=i/2){ans=n-n/i;}
 else{
 ans=(n-(i/2))+1;
 printf("%lld\n",ans);
