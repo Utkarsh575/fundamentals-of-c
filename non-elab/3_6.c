@@ -1,21 +1,42 @@
-#include <stdio.h>
-#include <math.h>
+#include<stdio.h>
 int main()
 {
-unsigned long long int t;
-scanf("%llu",&t);
-while(t--)
-{
-unsigned long long int k,n,ans,i;
-scanf("%lld",&n);
-i=1;
-while(i<=sqrt(n))
-{
-i=i*2;
+    int n,t,max=0;
+    scanf("%d",&n);
+    int a[n],b[9],f[9];
+    for(int i=0;i<=9;i++)
+    {
+        b[i]=0;
+        f[i]=0;
+    }
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+         for(int j=0;j<=9;j++)
+         {
+             f[j]=0;
+         }
+        while(a[i]!=0)
+        {
+           t=a[i]%10;
+           if(f[t]==0)
+           {
+              b[t]++;
+              f[t]=1;
+           }
+           a[i]=a[i]/10;
+        }
+    }
+    for(int i=0;i<=9;i++)
+    {
+        if(max<b[i])
+        {
+            max=b[i];
+        }
+    }
+    printf("%d",max);
+    
 }
-if(n/i>=i/2){ans=n-n/i;}
-else{
-ans=(n-(i/2))+1;
-printf("%lld\n",ans);
-}
-}}

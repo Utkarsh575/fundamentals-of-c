@@ -5,8 +5,6 @@ int main()
 {
     char s[1000];  
     int i;
-    char vowels[100]="";
-    char consonants[100]="";
     printf("Enter  the string : ");
     gets(s);
     for(i=0;i<strlen(s);i++)  
